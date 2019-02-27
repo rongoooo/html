@@ -1,0 +1,11 @@
+.table {
+    position: relative; /* 相对定位或绝对定位均可 */
+    width: 500px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin-top: 150px;
+    margin-left: -250px; /* 外边距为自身宽高的一半 */
+/ / margin: - 150 px 0 0 - 250 px; /*一样*/
+    background-color: antiquewhite;
+}

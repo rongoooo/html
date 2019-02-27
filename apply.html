@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>申请表</title>
+    <link rel="stylesheet" type="text/css" href="applyCss.css">
+</head>
+<script src="https://cdn.bootcss.com/jquery/1.8.0/jquery-1.8.0.js"></script>
+<body>
+<h1 align="center">申请表</h1>
+<table border="1" class="table">
+    <tr>
+        <td>姓名
+            <input id="name" type = "text"size = "10">
+        </td>
+
+        <td>密码
+            <input id="password" type = "text"size = "10"><br>
+        </td>
+    </tr>
+
+    <tr>
+        <td>性别
+            <input  type = "radio" name="gender" value="1" id="genderNan">男<input  type = "radio" name="gender" value="2" id="genderNv">女
+        </td>
+        <td>兴趣
+            <input name="hobby" id="hobby1" value="1" type = "checkbox">音乐
+            <input name="hobby" id="hobby2" value="2" type = "checkbox">舞蹈
+            <input name="hobby" id="hobby3" value="3" type = "checkbox">篮球
+            <input name="hobby" id="hobby4" value="4" type = "checkbox">读书
+            <input name="hobby" id="hobby5" value="5" type = "checkbox">旅游
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            Email
+            <input id="email_input" type = "text"size = "10">
+        </td>
+        <td>
+            专业
+            <select id="profession_select">
+                <option>请选择你的专业</option>
+                <option>土木</option>
+                <option>工程造价</option>
+                <option>信息管理与信息系统</option>
+                <option>艺术</option>
+                <option>英语</option>
+                <option>国际教育</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>申请职位
+            <input id="apply_input" type = "text"size="20">
+        </td>
+    </tr>
+    <tr>
+        <td>自我评价
+            <input id="appraise_input" type = "text">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4" align="center">
+            <button class="submitClick">提交</button>
+            <button class="resetClick">重置</button>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+<script type="text/javascript">
+    var gender = 0;
+    var profession = document.getElementById("profession_select");
+    var hobby = 0;
+
+    $(document).ready(function() {
+        $('input[type=radio][name=gender]').change(function() {
+            gender = this.value;
+        });
+        $('input[type=checkbox][name=hobby]').change(function() {
+            hobby = this.value;
+        });
+    });
+    $('.submitClick').click(function(){
+        if (document.getElementById("name").value == ""){
+            alert("请输入姓名");
+        } else if(document.getElementById("password").value == ""){
+            alert("请输入密码");
+        } else if(gender == "0"){
+            alert("请选择性别！");
+        } else if(profession.options[profession.selectedIndex].value == "请选择你的专业"){
+            alert("请选择你的专业");
+        } else if(document.getElementById("email_input").value == ""){
+            alert("请输入你的email");
+        } else if (document.getElementById("apply_input").value == ""){
+            alert("请填写你的申请职位！")
+        } else if (document.getElementById("appraise_input").value == ""){
+            alert("请填写你的自我评价！")
+        } else if(hobby == "0"){
+            alert("请选择你的兴趣！")
+        }
+    })
+    $('.resetClick').click(function(){
+        document.getElementById("name").value = ""
+        document.getElementById("password").value = ""
+        document.getElementById("email_input").value = ""
+        document.getElementById("apply_input").value = ""
+        document.getElementById("appraise_input").value = ""
+        document.getElementById("genderNan").checked = false
+        document.getElementById("genderNv").checked = false
+        profession.options[profession.selectedIndex].innerHTML = "请选择你的专业"
+        gender = "0"
+
+    })
+</script>

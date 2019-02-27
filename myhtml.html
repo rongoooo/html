@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--这个是找到指定的css文件，不写这个，就没法使用myCss定义的样式-->
+    <link rel="stylesheet" type="text/css" href="myCss.css">
+</head>
+<script src="https://cdn.bootcss.com/jquery/1.8.0/jquery-1.8.0.js"></script>
+<!js脚本-->
+<body>
+<p>请选择你喜欢的明星：</p>
+<form>
+    <label >易烊千玺：</label>
+    <input type = "checkbox" class="click1"/><br>
+    <label >炎亚纶：</label>
+    <input type = "checkbox" class="click2"/><br>
+    <label >白敬亭：</label>
+    <input type = "checkbox" class="click3"/><br>
+    <div>
+        <!--<!通过定义控件的class，就是给这个控件起一个名字。然后在js里通过这个名字去找到这个控件。&ndash;&gt;-->
+        <label  class="click3" style="background-color: brown"><input type="checkbox"> 11 </label>
+    </div>
+
+</form>
+
+<a href="https://baike.baidu.com/item/易烊千玺/221450?fr=aladdin">
+    <button>进入易烊千玺的百度百科！</button>
+</a>
+<a href="https://weibo.com/tfyiyangqianxi?is_hot=1">
+    <button>进入易烊千玺微博！</button>
+</a>
+<!--使用css 样式中名叫 div 的样式-->
+
+
+</body>
+</html>
+
+
+<!--这个就是JS-->
+<script type="text/javascript">
+    //通过click1 找到触发的控件。
+    $('.click1').click(function(){
+//        alert是弹出框的控件。
+        alert("哇你居然也是千纸鹤哇！");
+    })
+    $('.click2').click(function(){
+//        alert是弹出框的控件。
+        alert("我也很喜欢阿布呢！");
+    })
+    $('.click3').click(function(){
+//        alert是弹出框的控件。
+        alert("小白是一个鞋控wa!");
+    })
+</script>
